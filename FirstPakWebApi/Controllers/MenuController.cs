@@ -36,5 +36,15 @@ namespace FirstPakWebApi.Controllers
         {
             return Ok(_menuiService.GetMenuRole(menuIds,roleId));
         }
+        /// <summary>
+        /// 根据角色ID获取菜单权限
+        /// </summary>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult GetMenuRoleByRoleId(int roleId)
+        {
+            return Ok(_menuiService.GetMenuRoleById(roleId));
+        }
     }
 }

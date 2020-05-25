@@ -73,16 +73,49 @@ namespace FirstPakWebApi.Service
         {
             return Function(context =>
             {
-                foreach (var item in menuIds)
+                var data = context.MenuRoles.Where(x => x.RoleId == roleId).ToList();
+                if (data == null)
                 {
-                    MenuRole menuRole = new MenuRole
+                    foreach (var item in menuIds)
                     {
-                        MenuId = item,
-                        RoleId = roleId
-                    };
-                    Create<MenuRole>(menuRole);
+                        MenuRole menuRole = new MenuRole
+                        {
+                            MenuId = item,
+                            RoleId = roleId
+                        };
+                        Create<MenuRole>(menuRole);
+                    }
+                    return true;
                 }
-                return true;
+                else
+                {
+                    context.RemoveRange(context.MenuRoles.Where(x => x.RoleId == roleId));
+                    if (context.SaveChanges() > 0)
+                    {
+                        foreach (var item in menuIds)
+                        {
+                            MenuRole menuRole = new MenuRole
+                            {
+                                MenuId = item,
+                                RoleId = roleId
+                            };
+                            Create<MenuRole>(menuRole);
+                        }
+                    }
+                    return true;
+                }
+            });
+        }
+
+        public ViewMenuRole GetMenuRoleById(int roleId)
+        {
+            return Function(context =>
+            {
+                return context.MenuRoles.ToList().GroupBy(p => p.RoleId).Select(s => new ViewMenuRole
+                {
+                    RoleId = s.FirstOrDefault().RoleId,
+                    MenuIds = s.Select(x => x.MenuId).ToList()
+                }).FirstOrDefault(x=>x.RoleId==roleId); 
             });
         }
     }

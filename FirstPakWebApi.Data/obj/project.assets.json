@@ -6153,11 +6153,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\repo\\MyGitRepo\\FirstPakWebApi.Data\\FirstPakWebApi.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Repos\\MyGitRepo\\FirstPakWebApi.Data\\FirstPakWebApi.Data.csproj",
       "projectName": "FirstPakWebApi.Data",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\repo\\MyGitRepo\\FirstPakWebApi.Data\\FirstPakWebApi.Data.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\Repos\\MyGitRepo\\FirstPakWebApi.Data\\FirstPakWebApi.Data.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\repo\\MyGitRepo\\FirstPakWebApi.Data\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\Repos\\MyGitRepo\\FirstPakWebApi.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -6210,7 +6210,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

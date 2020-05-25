@@ -9,5 +9,6 @@ namespace FirstPakWebApi.IService
     {
         IEnumerable<ViewMenu> GetMenus(int userId);
         bool GetMenuRole(int[] menuIds, int roleId);
+        ViewMenuRole GetMenuRoleById(int roleId);
     }
 }

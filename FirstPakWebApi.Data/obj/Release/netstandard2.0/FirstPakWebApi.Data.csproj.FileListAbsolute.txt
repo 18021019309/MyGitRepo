@@ -16,3 +16,12 @@ C:\Users\Administrator\Desktop\FirstPakWebApi_New\FirstPakWebApi.Data\obj\Releas
 C:\Users\Administrator\Desktop\FirstPakWebApi_New\FirstPakWebApi.Data\obj\Release\netstandard2.0\FirstPakWebApi.Data.dll
 C:\Users\Administrator\Desktop\FirstPakWebApi_New\FirstPakWebApi.Data\obj\Release\netstandard2.0\FirstPakWebApi.Data.pdb
 C:\Users\Administrator\Desktop\FirstPakWebApi_New\FirstPakWebApi.Data\obj\Release\netstandard2.0\FirstPakWebApi.Data.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\Repos\MyGitRepo\FirstPakWebApi.Data\bin\Release\netstandard2.0\FirstPakWebApi.Data.deps.json
+C:\Users\Administrator\Desktop\Repos\MyGitRepo\FirstPakWebApi.Data\bin\Release\netstandard2.0\FirstPakWebApi.Data.dll
+C:\Users\Administrator\Desktop\Repos\MyGitRepo\FirstPakWebApi.Data\bin\Release\netstandard2.0\FirstPakWebApi.Data.pdb
+C:\Users\Administrator\Desktop\Repos\MyGitRepo\FirstPakWebApi.Data\obj\Release\netstandard2.0\FirstPakWebApi.Data.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\Repos\MyGitRepo\FirstPakWebApi.Data\obj\Release\netstandard2.0\FirstPakWebApi.Data.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Repos\MyGitRepo\FirstPakWebApi.Data\obj\Release\netstandard2.0\FirstPakWebApi.Data.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Repos\MyGitRepo\FirstPakWebApi.Data\obj\Release\netstandard2.0\FirstPakWebApi.Data.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Repos\MyGitRepo\FirstPakWebApi.Data\obj\Release\netstandard2.0\FirstPakWebApi.Data.dll
+C:\Users\Administrator\Desktop\Repos\MyGitRepo\FirstPakWebApi.Data\obj\Release\netstandard2.0\FirstPakWebApi.Data.pdb

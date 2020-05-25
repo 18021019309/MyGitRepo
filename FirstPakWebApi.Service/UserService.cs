@@ -36,6 +36,7 @@ namespace FirstPakWebApi.Service
                     Id = s.FirstOrDefault().User.Id,
                     Account = s.FirstOrDefault().User.Account,
                     Password = s.FirstOrDefault().User.Password,
+                    Remarks=s.FirstOrDefault().User.Remarks,
                     RoleIds = s.Select(x => x.RoleId).ToList(),
                 });
 
@@ -72,6 +73,7 @@ namespace FirstPakWebApi.Service
                     Id = s.FirstOrDefault().User.Id,
                     Account = s.FirstOrDefault().User.Account,
                     Password = s.FirstOrDefault().User.Password,
+                    Remarks = s.FirstOrDefault().User.Remarks,
                     RoleIds = s.Select(x => x.RoleId).ToList(),
                 }).FirstOrDefault(w => w.Id == id);
 
