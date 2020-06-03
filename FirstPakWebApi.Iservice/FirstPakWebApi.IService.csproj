@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FirstPakWebApi.Data\FirstPakWebApi.Data.csproj" />
+    <ProjectReference Include="..\FirstPakWebApi.ViewModel\FirstPakWebApi.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>

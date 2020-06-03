@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FirstPakWebApi</name>
+    </assembly>
+    <members>
+        <member name="M:FirstPakWebApi.Controllers.AuthController.Login(FirstPakWebApi.ViewModel.ViewUser)">
+            <summary>
+            登录
+            </summary>
+            <param name="userSpec">登录用户</param>
+            <returns></returns>
+        </member>
+        <member name="M:FirstPakWebApi.Controllers.MenuController.GetMenus">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FirstPakWebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            此方法由运行时调用，使用此方法将服务添加到容器
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:FirstPakWebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            此方法由运行时调用，使用此方法配置HTTP请求管道
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

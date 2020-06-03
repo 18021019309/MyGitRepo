@@ -3,3 +3,16 @@
 ################################################################################
 
 /FirstPakWebApi/bin
+/FirstPakWebApi/obj
+/FirstPakWebApi/Properties/PublishProfiles
+/FirstPakWebApi/FirstPakWebApi.csproj.user
+/FirstPakWebApi/.config
+/FirstPakWebApi.Data/bin
+/FirstPakWebApi.Iservice/bin
+/FirstPakWebApi.Iservice/obj
+/FirstPakWebApi.Service/bin
+/FirstPakWebApi.Service/obj
+/FirstPakWebApi.Transform/bin
+/FirstPakWebApi.Transform/obj
+/FirstPakWebApi.ViewModel/bin
+/FirstPakWebApi.ViewModel/obj
