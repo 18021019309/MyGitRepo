@@ -17,5 +17,6 @@ namespace FirstPakWebApi.IService
         bool DeleteEmployee(params int[] ids);
         IEnumerable<ViewDropDownList> GetEmployeeName();
         ViewEmployeeInfo GetPersonalInfo(int userId);
+        IEnumerable<ViewEmployeeInfo> GetEmployeeInfoByDepartmentId(int departmentId);
     }
 }

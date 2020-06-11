@@ -92,6 +92,15 @@ namespace FirstPakWebApi.Controllers
         {
             return Ok(_employeeInfoService.DeleteEmployee(ids));
         }
-
+        /// <summary>
+        /// 根据部门ID获取员工信息
+        /// </summary>
+        /// <param name="departmentId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult GetEmployeeInfoByDepartmentId(int departmentId)
+        {
+            return Ok(_employeeInfoService.GetEmployeeInfoByDepartmentId(departmentId));
+        }
     }
 }

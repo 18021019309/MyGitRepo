@@ -29,6 +29,9 @@ namespace FirstPakWebApi.Data.Migrations
                     b.Property<string>("DepartmentCode")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("DepartmentId")
+                        .HasColumnType("int");
+
                     b.Property<string>("DepartmentName")
                         .IsRequired()
                         .HasColumnType("nvarchar(20)")
@@ -50,6 +53,8 @@ namespace FirstPakWebApi.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
 
                     b.HasIndex("PrincipalId");
 
@@ -286,6 +291,10 @@ namespace FirstPakWebApi.Data.Migrations
 
             modelBuilder.Entity("FirstPakWebApi.Data.Models.Department", b =>
                 {
+                    b.HasOne("FirstPakWebApi.Data.Models.Department", null)
+                        .WithMany("Children")
+                        .HasForeignKey("DepartmentId");
+
                     b.HasOne("FirstPakWebApi.Data.Models.EmployeeInfo", "EmployeeInfo")
                         .WithMany("Departments")
                         .HasForeignKey("PrincipalId")

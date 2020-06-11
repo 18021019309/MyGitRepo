@@ -22,6 +22,7 @@ namespace FirstPakWebApi.Data.Models
         public int? PrincipalId { get; set; }
         public string Remarks { get; set; }
         public virtual EmployeeInfo EmployeeInfo { get; set; }
+        public virtual IEnumerable<Department> Children { get; set; }
         public virtual ICollection<EmployeeInfo> EmployeeInfos { get; set; }
     }
 }

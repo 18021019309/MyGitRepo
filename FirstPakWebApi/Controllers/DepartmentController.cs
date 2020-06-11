@@ -74,5 +74,14 @@ namespace FirstPakWebApi.Controllers
         {
             return Ok(_departmentService.DeleteDepartment(ids));
         }
+        /// <summary>
+        /// 获取组织架构信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult GetOrganizationInfo()
+        {
+            return Ok(_departmentService.GetOrganization());
+        }
     }
 }

@@ -16,6 +16,8 @@ namespace FirstPakWebApi.Transform
 
             CreateMap<Menu, ViewMenu>();
 
+            CreateMap<Department, ViewOrganization>();
+
             CreateMap<EmployeeInfo, ViewEmployeeInfo>()
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.UserName))
                 //.ForMember(dest => dest.NickName, opt => opt.MapFrom(src => src.User.Account))

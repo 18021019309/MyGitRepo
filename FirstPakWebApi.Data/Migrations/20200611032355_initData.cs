@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FirstPakWebApi.Data.Migrations
 {
-    public partial class init : Migration
+    public partial class initData : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -195,11 +195,18 @@ namespace FirstPakWebApi.Data.Migrations
                     Number = table.Column<int>(nullable: true),
                     IsDisable = table.Column<bool>(nullable: false),
                     PrincipalId = table.Column<int>(nullable: true),
-                    Remarks = table.Column<string>(nullable: true)
+                    Remarks = table.Column<string>(nullable: true),
+                    DepartmentId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Departments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Departments_Departments_DepartmentId",
+                        column: x => x.DepartmentId,
+                        principalTable: "Departments",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Departments_EmployeeInfos_PrincipalId",
                         column: x => x.PrincipalId,
@@ -207,6 +214,11 @@ namespace FirstPakWebApi.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.SetNull);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Departments_DepartmentId",
+                table: "Departments",
+                column: "DepartmentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Departments_PrincipalId",

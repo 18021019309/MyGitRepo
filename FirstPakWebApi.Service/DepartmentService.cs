@@ -73,5 +73,46 @@ namespace FirstPakWebApi.Service
                 return Delete<Department>(ids);
             });
         }
+
+        public IEnumerable<ViewOrganization> GetOrganization()
+        {
+            return Function(context =>
+            {
+                var organizationData = Mapper.Map<IEnumerable<ViewOrganization>>(context.Departments.ToList());
+                List<ViewOrganization> organizations = new List<ViewOrganization>();
+                foreach (var item in organizationData)
+                {
+                    if (item.SuperiorDepartmentId == null)
+                    {
+                        ViewOrganization organization = new ViewOrganization()
+                        {
+                            Id = item.Id,
+                            DepartmentName = item.DepartmentName,
+                            SuperiorDepartmentId = item.SuperiorDepartmentId,
+                            Children = GetChildOrganization(organizationData, item.Id)
+                        };
+                        organizations.Add(organization);
+                    }
+                }
+                return organizations;
+            });
+        }
+
+        private List<ViewOrganization> GetChildOrganization(IEnumerable<ViewOrganization> viewOrganizations, int superiorDepartmentId)
+        {
+            List<ViewOrganization> organizations = new List<ViewOrganization>();
+            foreach (var item in viewOrganizations.Where(x => x.SuperiorDepartmentId == superiorDepartmentId))
+            {
+                ViewOrganization organization = new ViewOrganization()
+                {
+                    Id = item.Id,
+                    DepartmentName = item.DepartmentName,
+                    SuperiorDepartmentId = item.SuperiorDepartmentId,
+                    Children = GetChildOrganization(viewOrganizations, item.Id)
+                };
+                organizations.Add(organization);
+            }
+            return organizations;
+        }
     }
 }

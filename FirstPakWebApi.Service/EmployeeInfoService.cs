@@ -93,7 +93,13 @@ namespace FirstPakWebApi.Service
                 }
             });
         }
-      
+        public IEnumerable<ViewEmployeeInfo> GetEmployeeInfoByDepartmentId(int departmentId)
+        {
+            return Function(context =>
+            {
+                return Mapper.Map<IEnumerable<ViewEmployeeInfo>>(context.EmployeeInfos.Where(e => e.DepartmentId == departmentId).ToList());
+            });
+        }
     }
 }
 

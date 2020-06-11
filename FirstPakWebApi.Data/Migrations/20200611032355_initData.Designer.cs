@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FirstPakWebApi.Data.Migrations
 {
     [DbContext(typeof(FirstPakDbContext))]
-    [Migration("20200529022810_init")]
-    partial class init
+    [Migration("20200611032355_initData")]
+    partial class initData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,9 @@ namespace FirstPakWebApi.Data.Migrations
 
                     b.Property<string>("DepartmentCode")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DepartmentId")
+                        .HasColumnType("int");
 
                     b.Property<string>("DepartmentName")
                         .IsRequired()
@@ -52,6 +55,8 @@ namespace FirstPakWebApi.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
 
                     b.HasIndex("PrincipalId");
 
@@ -288,6 +293,10 @@ namespace FirstPakWebApi.Data.Migrations
 
             modelBuilder.Entity("FirstPakWebApi.Data.Models.Department", b =>
                 {
+                    b.HasOne("FirstPakWebApi.Data.Models.Department", null)
+                        .WithMany("Children")
+                        .HasForeignKey("DepartmentId");
+
                     b.HasOne("FirstPakWebApi.Data.Models.EmployeeInfo", "EmployeeInfo")
                         .WithMany("Departments")
                         .HasForeignKey("PrincipalId")
