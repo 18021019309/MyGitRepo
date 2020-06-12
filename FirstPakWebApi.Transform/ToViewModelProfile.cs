@@ -44,7 +44,7 @@ namespace FirstPakWebApi.Transform
 
             CreateMap<EmployeeInfo, ViewDropDownList>()
               .ForMember(dest => dest.Code, opt => opt.MapFrom(scr => scr.Id))
-              .ForMember(dest => dest.CodeName, opt => opt.MapFrom(scr => scr.UserName+scr.Tel));
+              .ForMember(dest => dest.CodeName, opt => opt.MapFrom(scr => scr.UserName + " " +scr.Tel));
 
             CreateMap<Department, ViewDropDownList>()
              .ForMember(dest => dest.Code, opt => opt.MapFrom(scr => scr.Id))

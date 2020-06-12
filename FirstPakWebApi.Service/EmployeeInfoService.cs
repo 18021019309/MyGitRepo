@@ -68,7 +68,7 @@ namespace FirstPakWebApi.Service
         {
             return Function(context =>
             {
-                return Mapper.Map<IEnumerable<ViewDropDownList>>(context.EmployeeInfos.Select(x => new EmployeeInfo { Id = x.Id, UserName = x.UserName }).ToList());
+                return Mapper.Map<IEnumerable<ViewDropDownList>>(context.EmployeeInfos.Select(x => new EmployeeInfo { Id = x.Id, UserName = x.UserName,Tel=x.Tel }).ToList());
             });
         }
         public bool DeleteEmployee(params int[] ids)
