@@ -14,5 +14,7 @@ namespace FirstPakWebApi.ViewModel
         public bool IsDisable { get; set; }
         public int? PrincipalId { get; set; }
         public string Remarks { get; set; }
+        public virtual IEnumerable<ViewDepartment> Children { get; set; }
+
     }
 }

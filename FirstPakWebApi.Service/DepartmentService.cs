@@ -97,7 +97,6 @@ namespace FirstPakWebApi.Service
                 return organizations;
             });
         }
-
         private List<ViewOrganization> GetChildOrganization(IEnumerable<ViewOrganization> viewOrganizations, int superiorDepartmentId)
         {
             List<ViewOrganization> organizations = new List<ViewOrganization>();
@@ -113,6 +112,55 @@ namespace FirstPakWebApi.Service
                 organizations.Add(organization);
             }
             return organizations;
+        }
+        public IEnumerable<ViewDepartment> GetDepartmentOrganization()
+        {
+            return Function(context =>
+            {
+                var organizationData = Mapper.Map<IEnumerable<ViewDepartment>>(context.Departments.ToList());
+                List<ViewDepartment> departmentOrganizations = new List<ViewDepartment>();
+                foreach (var item in organizationData)
+                {
+                    if (item.SuperiorDepartmentId == null)
+                    {
+                        ViewDepartment departmentOrganization = new ViewDepartment()
+                        {
+                            Id = item.Id,
+                            DepartmentName = item.DepartmentName,
+                            DepartmentCode = item.DepartmentCode,
+                            Number = item.Number,
+                            IsDisable = item.IsDisable,
+                            Remarks = item.Remarks,
+                            PrincipalId = item.PrincipalId,
+                            SuperiorDepartmentId = item.SuperiorDepartmentId,
+                            Children = GetChildDepartmentOrganization(organizationData, item.Id)
+                        };
+                        departmentOrganizations.Add(departmentOrganization);
+                    }
+                }
+                return departmentOrganizations;
+            });
+        }
+        private List<ViewDepartment> GetChildDepartmentOrganization(IEnumerable<ViewDepartment> viewDepartments, int superiorDepartmentId)
+        {
+            List<ViewDepartment> departmentOrganizations = new List<ViewDepartment>();
+            foreach (var item in viewDepartments.Where(x => x.SuperiorDepartmentId == superiorDepartmentId))
+            {
+                ViewDepartment departmentOrganization = new ViewDepartment()
+                {
+                    Id = item.Id,
+                    DepartmentName = item.DepartmentName,
+                    DepartmentCode=item.DepartmentCode,
+                    Number=item.Number,
+                    IsDisable=item.IsDisable,
+                    Remarks=item.Remarks,
+                    PrincipalId=item.PrincipalId,
+                    SuperiorDepartmentId = item.SuperiorDepartmentId,
+                    Children = GetChildDepartmentOrganization(viewDepartments, item.Id)
+                };
+                departmentOrganizations.Add(departmentOrganization);
+            }
+            return departmentOrganizations;
         }
     }
 }

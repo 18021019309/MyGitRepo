@@ -14,5 +14,6 @@ namespace FirstPakWebApi.IService
         bool UpdateDepartment(ViewDepartment department);
         bool DeleteDepartment(params int[] ids);
         IEnumerable<ViewOrganization> GetOrganization();
+        IEnumerable<ViewDepartment> GetDepartmentOrganization();
     }
 }

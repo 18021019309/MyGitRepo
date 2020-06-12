@@ -83,5 +83,14 @@ namespace FirstPakWebApi.Controllers
         {
             return Ok(_departmentService.GetOrganization());
         }
+        /// <summary>
+        /// 获取部门层级组织架构信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult GetDepartmentOrganization()
+        {
+            return Ok(_departmentService.GetDepartmentOrganization());
+        }
     }
 }
